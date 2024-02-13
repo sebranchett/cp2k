@@ -1,10 +1,10 @@
 # Running CP2K on DelftBlue
 
-Following installation instructions: https://github.com/cp2k/cp2k/blob/master/INSTALL.md.
+Following installation instructions here: https://github.com/cp2k/cp2k/blob/master/INSTALL.md.
 
-## In a Docker/Apptainer container
+## 1) In a Docker/Apptainer container
 See https://www.cp2k.org/howto:build_and_run_cp2k_containers.
-Following the Apptainer (Singularity) instructions for the production container here: https://github.com/cp2k/cp2k-containers#readme.
+Following the Apptainer (Singularity) instructions for the production container described here: https://github.com/cp2k/cp2k-containers#readme.
 
 This link documents the use of Apptainer on DelftBlue: https://doc.dhpc.tudelft.nl/delftblue/howtos/singularity.
 
@@ -14,7 +14,7 @@ mkdir /scratch/$USER/tmpdir
 mkdir /scratch/$USER/.apptainer/cache
 ```
 
-Create a new directory and copy `apptainer_version.sh` into it. You can do this using git:
+Create a new directory and copy `apptainer_version.sh` and `Si_bulk8.inp` into it. Move into the new directory. You can use git to do this, as follows:
 ```
 cd /scratch/$USER
 git clone https://github.com/sebranchett/cp2k.git
@@ -31,14 +31,17 @@ Submit a test job:
 ```
 sbatch apptainer_version.sh
 ```
-This first runs a quick (around 10 minutes) test to check whether CP2K runs. The output file `run_test.out` should contain information, but no errors.
+This first performs a quick test to check whether CP2K runs. The output file `run_test.out` should contain information, but no errors.
 
-The test job then runs the [CP2K regression test suite](https://www.cp2k.org/dev:regtesting/).
+The test job then runs a tutorial example described here: https://www.cp2k.org/howto:static_calculation.
+The output file `Si_bulk8.out` should be as described in the tutorial, with a 'Total energy' of around -31.297885.
 
-## Installation via Toolchain script
+The [CP2K regression test](https://www.cp2k.org/dev:regtesting/) has been commented out, since it takes a long time.
+
+## 2) Installation via Toolchain script
 #TODO
 See https://github.com/cp2k/cp2k/tree/master/tools/toolchain.
 
-## Installation via Spack
+## 3) Installation via Spack
 #TODO
 See https://manual.cp2k.org/trunk/getting-started/spack.html.
