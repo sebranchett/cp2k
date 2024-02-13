@@ -20,6 +20,7 @@ cd /scratch/$USER
 git clone https://github.com/sebranchett/cp2k.git
 cd cp2k
 ```
+The `Si_bulk8.inp` file is from [this tutorial](https://www.cp2k.org/howto:static_calculation) and is used under a [CC Attribution-ShareAlike 4.0 International license](http://creativecommons.org/licenses/by-sa/4.0/).
 
 Get a CP2K container from DockerHub (this requires internet access and takes about 10 minutes):
 ```
