@@ -42,6 +42,7 @@ The [CP2K regression test](https://www.cp2k.org/dev:regtesting/) has been commen
 ## 2) Installation via Toolchain script
 #TODO
 See https://github.com/cp2k/cp2k/tree/master/tools/toolchain.
+Maybe useful: https://www.cp2k.org/_media/events:2016_summer_school:building_cp2k.pdf.
 
 ## 3) Installation via Spack
 #TODO
